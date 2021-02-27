@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/map"
+        android:title="Map"
+        android:icon="@drawable/ic_baseline_map_24"/>
+    <item
+        android:id="@+id/input"
+        android:title="Input"
+        android:icon="@drawable/ic_baseline_input_24"/>
+    <item
+        android:id="@+id/scan"
+        android:title="Scan"
+        android:icon="@drawable/ic_baseline_qr_code_scanner_24"/>
+</menu>
