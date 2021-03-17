@@ -3,6 +3,9 @@ package com.example.moco_2021_nomorelists
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.moco_2021_nomorelists.View.InputFragment
+import com.example.moco_2021_nomorelists.View.MapFragment
+import com.example.moco_2021_nomorelists.View.ScanFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
