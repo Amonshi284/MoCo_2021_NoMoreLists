@@ -1,13 +1,13 @@
 package com.example.moco_2021_nomorelists.ViewModel
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.moco_2021_nomorelists.Model.User
 import com.example.moco_2021_nomorelists.Model.UserRepository
 import kotlinx.coroutines.launch
 
-class InputViewModel(private val repository: UserRepository) : ViewModel() {
+class UserViewModel(private val repository: UserRepository) : ViewModel() {
+
+    val allUsers: LiveData<List<User>> = repository.allUsers.asLiveData()
 
     fun insert(user: User) = viewModelScope.launch {
         repository.insert(user)
@@ -16,9 +16,9 @@ class InputViewModel(private val repository: UserRepository) : ViewModel() {
 
 class UserViewModelFactory(private val repository: UserRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(InputViewModel::class.java)) {
+        if (modelClass.isAssignableFrom(UserViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return InputViewModel(repository) as T
+            return UserViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
